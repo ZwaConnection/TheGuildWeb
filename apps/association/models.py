@@ -9,6 +9,6 @@ class Association(models.Model):
     description = models.TextField()
     year_of_creation = models.DateField(auto_now=False, auto_now_add=False)
     address = models.CharField(max_length=100)
-    phone = models.IntergerField()
+    phone = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
