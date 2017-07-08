@@ -14,6 +14,7 @@ class Association(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     email = models.EmailField(max_length=254, default="")
     initials = models.CharField(max_length=25, default="")
+    logo = models.ImageField(upload_to='Images/Association/logo', blank=True)
 
     def __str__(self):
         return self.name
