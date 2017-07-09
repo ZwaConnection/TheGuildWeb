@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from ..association.models import Association
+from ..association.models import *
 
 from django.contrib.auth.models import User
 
@@ -544,6 +544,6 @@ class Profile(models.Model):
 	education = models.ForeignKey(Education, related_name='education')
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
-	association = models.ForeignKey(Association, on_delete=models.CASCADE, null=True)
+	association = models.ForeignKey('association.Association', on_delete=models.CASCADE, null=True)
 	def __str__(self):
 		return self.user.username

@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-#from ..member.models import *
+from ..member.models import *
 
 # Create your models here.
 class Association(models.Model):
@@ -16,6 +16,6 @@ class Association(models.Model):
     email = models.EmailField(max_length=254, default="")
     initials = models.CharField(max_length=25, default="")
     logo = models.ImageField(upload_to='Images/Association/logo', blank=True)
-    #country = models.ForeignKey(Country)
+    country = models.ForeignKey('member.Country', null=True)
     def __str__(self):
         return self.name
