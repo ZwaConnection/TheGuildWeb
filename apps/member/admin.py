@@ -16,7 +16,7 @@ class CountryAdmin(admin.ModelAdmin):
 	list_display = ('country',)
 @admin.register(State)
 class StateAdmin(admin.ModelAdmin):
-	list_display = ('name','city',)
+	list_display = ('name',)
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
 	list_display = ('name',)

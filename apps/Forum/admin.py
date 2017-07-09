@@ -12,4 +12,4 @@ class TopicAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-	list_display = ('name', 'created_at', 'updated_at', 'user')
+	list_display = ('name', 'created_at', 'updated_at', 'post_user')
