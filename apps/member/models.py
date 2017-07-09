@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+from ..association.models import Association
+
 from django.contrib.auth.models import User
 
 class Country(models.Model):
@@ -525,5 +527,23 @@ class Profile(models.Model):
 	education = models.ForeignKey(Education, related_name='education')
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
+	def __str__(self):
+		return self.user.username
+	user = models.OneToOneField(User)
+	dob = models.DateField(auto_now=True)
+	gender_choices = (
+		(f,'female'),
+		(m,'male'),
+		)
+	gender = models.CharField(max_length=6, choices=gender_choices, default=f)
+	nationality = models.ForeignKey(Country, related_name='nationality')
+	curent_country = models.ForeignKey(Country, related_name='curent_country')
+	user_sate = models.ForeignKey(State, related_name='user_state')
+	User_city =  models.ForeignKey(City, related_name='user_city')
+	address = models.TextField(max_length=255)
+	education = models.ForeignKey(Education, related_name='education')
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
+	association = models.ForeignKey(Association, on_delete=models.CASCADE, null=True)
 	def __str__(self):
 		return self.user.username
