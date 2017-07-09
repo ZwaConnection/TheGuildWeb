@@ -489,15 +489,18 @@ class Country(models.Model):
 	country = models.CharField(max_length=100, choices=country_choices, default=IN)
 	def __str__(self):
 		return self.country
-class City(models.Model):
-	name = models.CharField(max_length=100)
-	def __str__(self):
-		return self.name
+
 class State(models.Model):
 	name = models.CharField(max_length=100)
-	city = models.ForeignKey(City, related_name='city')
 	def __str__(self):
 		return self.name
+
+class City(models.Model):
+	name = models.CharField(max_length=100)
+	state = models.ForeignKey(State, default='', null=True)
+	def __str__(self):
+		return self.name
+
 class Education(models.Model):
 	university = models.CharField(max_length=100)
 	college = models.CharField(max_length=100)
