@@ -8,10 +8,13 @@ from django.http import HttpResponse
 
 
 def register(request):
-    return render(request, 'association/register.html')
+    context = {}
+    return render(request, 'association/register.html', context)
 
 def ass_profile(request):
-    return render(request, 'association/profile.html')
+    context = {}
+    return render(request, 'association/profile.html', context)
 
 def account(request):
-    return render(request, 'association/account.html')
+    context = {}
+    return render(request, 'association/account.html', context)
