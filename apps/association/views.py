@@ -11,9 +11,9 @@ def register(request):
     context = {}
     return render(request, 'association/register.html', context)
 
-def ass_profile(request):
-    context = {}
-    return render(request, 'association/profile.html', context)
+# def ass_profile(request):
+#     context = {}
+#     return render(request, 'association/profile.html', context)
 
 def account(request):
     context = {}
