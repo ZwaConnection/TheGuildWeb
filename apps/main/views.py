@@ -27,3 +27,4 @@ def chat(request):
     return render(request, 'app/chat.html')
 def terms_conditions(request):
     return render(request, 'app/terms_conditions.html')
+    
