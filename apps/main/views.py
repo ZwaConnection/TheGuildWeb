@@ -6,7 +6,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 def index(request):
-    return render(request, 'app/index.html')
+    context = {}
+    return render(request, 'app/index.html', context)
 def about(request):
     return render(request, 'app/about.html')
 def contact(request):
@@ -27,4 +28,3 @@ def chat(request):
     return render(request, 'app/chat.html')
 def terms_conditions(request):
     return render(request, 'app/terms_conditions.html')
-    
