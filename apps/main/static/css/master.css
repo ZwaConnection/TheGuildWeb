@@ -1,0 +1,22 @@
+#bottom{
+    background-image: url('../img/map.png');
+     background-repeat: no-repeat;
+}
+.social-link li{
+    float: left;
+}
+.social-link li a {
+    padding: 16px;
+    text-decoration: none;
+}
+li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
