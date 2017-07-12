@@ -3,4 +3,21 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
+from django.http import HttpResponse
+
 # Create your views here.
+
+def login(request):
+    return render(request, 'member/login.html')
+
+def profile(request):
+    return render(request, 'member/profile.html')
+
+def user_register(request):
+    return render(request, 'member/user_register.html')
+
+def accounts(request):
+    return render(request, 'member/accounts.html')
+
+def logout(request):
+    return render(request, 'member/logout.html')
