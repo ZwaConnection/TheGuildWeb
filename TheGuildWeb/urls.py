@@ -18,7 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include('apps.main.urls')),
-    url(r'^association/', include('apps.association.urls')),
+    url(r'^association/', include('apps.association.urls', namespace='association')),
     url(r'^member/', include('apps.member.urls')),
     url(r'^forum/', include('apps.Forum.urls')),
     url(r'^admin/', admin.site.urls),

@@ -12,16 +12,15 @@
   <div class="fieldset">
     {% for field in form1 %}
     <div class="field">
-      <p>{{ field.label }}</p>
+      <strong>{{ field.label }}</strong>
       <p>{{ field }}</p>
-      <p>{{ field.help_text|safe }}</p>
+      <span>{{ field.help_text|safe }}</span>
     </div>
     {% endfor %}
     {% for field in form2.visible_fields %}
     <div class="field">
-      <p>{{ field.label }}</p>
-      <p>{{ field }}</p>
-      <p>{{ field.help_text|safe }}</p>
+      <strong>{{ field.label }}</strong>
+      <p>{{ field }} <span>{{ field.help_text|safe }}</span></p>
     </div>
     {% endfor %}
   </div>

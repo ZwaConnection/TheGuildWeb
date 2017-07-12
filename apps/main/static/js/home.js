@@ -14,6 +14,9 @@ $(document).ready(function(){
     }
   });
 
+  $(function(){
+    $('#id_year_of_creation').datepicker({ dateFormat: 'yy-mm-dd'});
+  });
 
 
 
