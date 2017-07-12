@@ -38,3 +38,7 @@ def register(request):
 def account(request):
     context = {}
     return render(request, 'association/account.html', context)
+
+def associations(request):
+    context = {}
+    return render(request, 'association/associations.html', context)
