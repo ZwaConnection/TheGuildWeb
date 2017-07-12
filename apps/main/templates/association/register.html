@@ -4,7 +4,14 @@
 
 {% block content %}
 
+<h1>Register as an association</h1>
 
-Register Here
+
+<form class="" method="post">
+  {% csrf_token %}
+  {{ form1.as_p }}
+  {{ form2.as_p }}
+  <button type="submit" name="button">Register</button>
+</form>
 
 {% endblock %}
