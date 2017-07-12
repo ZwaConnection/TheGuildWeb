@@ -4,7 +4,20 @@
 
 {% block content %}
 
+<h1>Register as an association</h1>
 
-Register Here
+
+<form class="association-reg" method="post">
+  {% csrf_token %}
+  {{ form1.as_p }}
+  {{ form2.as_p }}
+  <div class="terms-con">
+    <ul>
+      <li><input type="checkbox" id="terms" name="name"></li>
+      <li><p>I agree with the <a href="#">terms and conditions of the site</a> </p></li>
+    </ul>
+  </div>
+  <button type="submit" id="registerBtn" name="button" disabled="disabled">Register</button>
+</form>
 
 {% endblock %}
