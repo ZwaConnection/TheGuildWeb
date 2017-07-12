@@ -32,5 +32,5 @@ class IdentifierForm(UserCreationForm):
             'password2'
         )
         widgets = {
-            'username': forms.HiddenInput()
+            'username': forms.HiddenInput(attrs={'id': 'association_id'})
         }

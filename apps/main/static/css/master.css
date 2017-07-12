@@ -21,3 +21,7 @@ ul {
     padding: 0;
     overflow: hidden;
 }
+
+.association-reg ul {
+  display: none;
+}

@@ -7,10 +7,25 @@
 <h1>Register as an association</h1>
 
 
-<form class="association-reg" method="post">
+<form method="post">
   {% csrf_token %}
-  {{ form1.as_p }}
-  {{ form2.as_p }}
+  <div class="fieldset">
+    {% for field in form1 %}
+    <div class="field">
+      <p>{{ field.label }}</p>
+      <p>{{ field }}</p>
+      <p>{{ field.help_text|safe }}</p>
+    </div>
+    {% endfor %}
+    {% for field in form2.visible_fields %}
+    <div class="field">
+      <p>{{ field.label }}</p>
+      <p>{{ field }}</p>
+      <p>{{ field.help_text|safe }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
   <div class="terms-con">
     <ul>
       <li><input type="checkbox" id="terms" name="name"></li>
