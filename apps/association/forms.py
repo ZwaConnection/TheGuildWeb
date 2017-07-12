@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.utils.translation import gettext_lazy as _
 
 class AssociationForm(forms.ModelForm):
     class Meta:
@@ -17,6 +18,9 @@ class AssociationForm(forms.ModelForm):
             'country',
             'logo'
         )
+        labels = {
+            'name': _("Association name")
+        }
 
 class IdentifierForm(UserCreationForm):
     class Meta:

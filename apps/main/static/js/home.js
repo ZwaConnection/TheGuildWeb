@@ -5,7 +5,15 @@ $(document).ready(function(){
       $('#id_username').val($(this).val());
   });
 
-  console.log($('#id_username').val());
+  $('#terms').click(function(){
+    // check if the checkbox is checked
+    if($(this).is(':checked')){
+      $('#registerBtn').removeAttr('disabled');
+    }else{
+      $('#registerBtn').attr('disabled', true);
+    }
+  });
+
 
 
 
