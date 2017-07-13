@@ -1,0 +1,78 @@
+body {
+  min-height: 1000px;
+  padding-top: 70px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+}
+a{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+#bottom{
+    background-image: url('../img/map.png');
+     background-repeat: no-repeat;
+     margin-left: auto;
+}
+.social-link li{
+    float: left;
+}
+.social-link li a {
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #063852;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+}
+section{
+    min-height: 800px;
+}
+#menu{
+    background-color: #063852;
+    border-bottom: 8px solid #a30303;
+}
+#menu li a{
+    color: white;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+a-color li{
+  padding-top: 14px;
+}
+#menu li:hover{
+  background: #0676b0;
+}
+#menu li a:active{
+  background-color: : #0676b0;
+}
+
+#menu li a:hover{
+    color: white;
+    transition: 0.3s ease-out all;
+  }
+#menu a:hover{
+    transition: .2s ease-out all;
+    -webkit-transform:  scale(1.07);/* Chrome, Safari, Opera */
+    transform: scale(1.05);
+  }
+  #menu a:focus {
+      color: #0676b0;
+      background-color: #0676b0;
+  }
+  #menu a:active {
+      color: #0676b0;
+      background-color: #0676b0;
+  }
