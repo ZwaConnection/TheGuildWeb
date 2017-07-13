@@ -1,0 +1,7 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800|Roboto|Source+Sans+Pro" rel="stylesheet">
+Specify in CSS
+
+Use the following CSS rules to specify these families:
+font-family: 'Open Sans', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Roboto', sans-serif;
