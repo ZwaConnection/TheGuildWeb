@@ -76,3 +76,11 @@ a-color li{
       color: #0676b0;
       background-color: #0676b0;
   }
+
+  #div_id_password1 .controls ul {
+    display: none;
+  }
+
+  .terms-con ul li{
+    display: inline-block;
+  }

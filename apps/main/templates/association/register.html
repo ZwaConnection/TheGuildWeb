@@ -1,37 +1,42 @@
 {% extends 'app/base.html' %}
 
+{% load crispy_forms_tags %}
+
+
 {% block title %}Association Registration {% endblock %}
 
 {% block content %}
 
-<h1>Register as an association</h1>
-
-
-<form method="post">
-  {% csrf_token %}
-  <div class="fieldset">
-    {% for field in form1 %}
-    <div class="field">
-      <strong>{{ field.label }}</strong>
-      <p>{{ field }}</p>
-      <span>{{ field.help_text|safe }}</span>
+<div class="container">
+<div class="row">
+  <div class="col-md-8">
+    <div class="page-header">
+      <h1>Register as an association</h1>
     </div>
-    {% endfor %}
-    {% for field in form2.visible_fields %}
-    <div class="field">
-      <strong>{{ field.label }}</strong>
-      <p>{{ field }} <span>{{ field.help_text|safe }}</span></p>
-    </div>
-    {% endfor %}
-  </div>
 
-  <div class="terms-con">
-    <ul>
-      <li><input type="checkbox" id="terms" name="name"></li>
-      <li><p>I agree with the <a href="#">terms and conditions of the site</a> </p></li>
-    </ul>
+		<form method="post">
+				{% csrf_token %}
+					<div class="fieldset">
+						{% for field in form1 %}
+								{{ field|as_crispy_field }}
+								<span>{{ field.help_text|safe }}</span>
+						{% endfor %}
+						{% for field in form2.visible_fields %}
+								{{ field|as_crispy_field }}
+						{% endfor %}
+					</div>
+
+					<div class="terms-con">
+						<ul>
+							<li><input type="checkbox" id="terms" name="name"></li>
+							<li><a href="#">I agree with the terms and conditions of the site</a></li>
+						</ul>
+					</div>
+				<button type="submit" id="registerBtn" name="button" disabled="disabled">Register</button>
+		</form>
+
   </div>
-  <button type="submit" id="registerBtn" name="button" disabled="disabled">Register</button>
-</form>
+</div>
+</div>
 
 {% endblock %}
