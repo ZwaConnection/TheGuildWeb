@@ -14,7 +14,7 @@ def profile(request):
     return render(request, 'member/profile.html')
 
 def user_register(request):
-    return render(request, 'member/user_register.html')
+    return render(request, 'member/register.html')
 
 def accounts(request):
     return render(request, 'member/accounts.html')

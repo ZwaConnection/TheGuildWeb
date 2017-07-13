@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="page-header">
+          <h1>Register as a user</h1>
+        </div>
+            <p>Register as <a href="{%url 'association:register'%}"><button type="button" class="btn btn-success">Association</button></a></p>
+       </div>
+    </div>
+</div>
+
+{% endblock %}
