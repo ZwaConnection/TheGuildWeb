@@ -11,6 +11,11 @@ a{
     font-weight: bold;
     font-size: 15px;
 }
+
+textarea{
+  resize: none;
+}
+
 #bottom{
     background-image: url('../img/map.png');
      background-repeat: no-repeat;
@@ -76,6 +81,7 @@ a-color li{
       color: #0676b0;
       background-color: #0676b0;
   }
+
 
   #div_id_password1 .controls ul {
     display: none;

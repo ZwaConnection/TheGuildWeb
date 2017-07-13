@@ -24,6 +24,9 @@ class AssociationForm(forms.ModelForm):
         labels = {
             'name': _("Association name")
         }
+        widgets = {
+            'year_of_creation': forms.TextInput(attrs={'placeholder': "Format: 'year-month-day'"})
+        }
 
         def __init__(self, *args, **kwargs):
             super(AssociationForm, self).__init__(*args, **kwargs)
