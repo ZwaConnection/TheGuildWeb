@@ -1,6 +1,5 @@
 body {
   min-height: 100px;
-  padding-top: 70px;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Source Sans Pro', sans-serif;
   font-family: 'Roboto', sans-serif;
@@ -11,7 +10,6 @@ a{
     font-weight: bold;
     font-size: 15px;
 }
-
 textarea{
   resize: none;
 }
@@ -22,7 +20,7 @@ textarea{
      margin-left: auto;
      border-top: 8px solid #a30303;
      padding-top: 15px;
-     margin-top: 30px;
+     margin-top: 20px;
 }
 .social-link li{
     float: left;
@@ -34,7 +32,6 @@ textarea{
 
 li a {
         display: block;
-        padding: 10px;
         text-decoration: none;
         color: #063852;
 }
@@ -45,10 +42,13 @@ ul {
 }
 section{
     min-height: 800px;
+    background-color: #fffcfc;
 }
+
 #menu{
-    background-color: #063852;
+    background-color: rgba(6,56,82,0.8);
     border-bottom: 8px solid #a30303;
+    padding-bottom: 2px;
 }
 #menu li a{
     color: white;
@@ -60,14 +60,12 @@ section{
 a-color li{
   padding-top: 14px;
 }
-#menu li:hover{
+#menu li:hover, li:active{
   background: #0676b0;
-}
-#menu li a:active{
-  background-color: : #0676b0;
+  border-radius: 5px;
 }
 
-#menu li a:hover{
+#menu li a:hover,{
     color: white;
     transition: 0.3s ease-out all;
   }
@@ -76,15 +74,12 @@ a-color li{
     -webkit-transform:  scale(1.07);/* Chrome, Safari, Opera */
     transform: scale(1.05);
   }
-  #menu a:focus {
-      color: #0676b0;
-      background-color: #0676b0;
-  }
+  #menu a:focus,
+  #menu a:active,
   #menu a:active {
-      color: #0676b0;
+      color: black;
       background-color: #0676b0;
   }
-
 
   #div_id_password1 .controls ul {
     display: none;
@@ -98,8 +93,8 @@ a-color li{
 
 /* Carousel base class */
 .carousel {
-  height: 530px;
-  margin-bottom: 60px;
+  height: 600px;
+  margin-bottom: 5px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -108,7 +103,7 @@ a-color li{
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 530px;
+  height: 600px;
   background-color: #202020;
 }
 .carousel-inner > .item > img {
@@ -116,7 +111,7 @@ a-color li{
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 520px;
+  height: 600px;
 }
 /* Bump up size of carousel content */
   .carousel-caption p {
@@ -135,13 +130,19 @@ a-color li{
     margin-top: 120px;
   }
 }
-/* MARKETING CONTENT
+/* Mission and vision section
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
 .vision .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
+  background-color: rgba(6,56,82,0.7);
+  border-radius: 5px;
+  height: 300px;
+  color: white;
+  padding: 20px;
+  margin: center;
 }
 .vision h2 {
   font-weight: normal;
@@ -177,3 +178,83 @@ a-color li{
     background-color: green;
     height: 200px;
 }
+#top{
+    float: right;
+}
+/*News Page*/
+/*
+ * Blog name and description
+ */
+
+.blog-header {
+  padding-top: 75px;
+  padding-bottom: 20px;
+}
+.blog-title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 60px;
+  font-weight: normal;
+}
+.blog-description {
+  font-size: 20px;
+  color: #999;
+}
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Sidebar modules for boxing content */
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+}
+.sidebar-module-inset {
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
+}
+/* Pagination */
+.pager {
+  margin-bottom: 60px;
+  text-align: left;
+}
+.pager > li > a {
+  width: 140px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+
+/*
+ * Blog posts
+ */
+
+.blog-post {
+  margin-bottom: 60px;
+}
+.blog-post-title {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+.blog-post-meta {
+  margin-bottom: 20px;
+  color: #999;
+}
+/*Article Design*/
+.article{
+    margin-top:100px;
+    padding-left: 80px;
+    padding-right: 130px;
+  }
