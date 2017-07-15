@@ -8,13 +8,13 @@ from django.http import HttpResponse
 # Create your views here.
 
 def login(request):
-    return render(request, 'member/login.html')
+    return render(request, 'member/login.html', {})
 
 def profile(request):
     return render(request, 'member/profile.html')
 
 def user_register(request):
-    return render(request, 'member/register.html')
+    return render(request, 'member/register.html', {})
 
 def accounts(request):
     return render(request, 'member/accounts.html')

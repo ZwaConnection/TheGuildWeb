@@ -14,10 +14,12 @@ def register(request):
         form1 = AssociationForm(request.POST)
         form2 = IdentifierForm(request.POST)
         # form2.fields['username'] = form1.data['name']
-        print form2.data['username']
+        # print form2.data['username']
         if form1.is_valid() and form2.is_valid():
-            form2.save()
-            form1.save()
+            user = form2.save()
+            a = form1.save(commit=False)
+            a.identifier = user
+            a.save()
             messages.success(request, 'You have registered your association successfully')
             return redirect('main:index')
         else:

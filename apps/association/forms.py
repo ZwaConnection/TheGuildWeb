@@ -8,39 +8,6 @@ from crispy_forms.helper import FormHelper
 # from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
 # from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 
-class AssociationForm(forms.ModelForm):
-    class Meta:
-        model = Association
-        fields = (
-            'name',
-            'description',
-            'year_of_creation',
-            'address',
-            'phone',
-            'initials',
-            'country',
-            'logo'
-        )
-        labels = {
-            'name': _("Association name")
-        }
-        widgets = {
-            'year_of_creation': forms.TextInput(attrs={'placeholder': "Format: 'year-month-day'"})
-        }
-
-        def __init__(self, *args, **kwargs):
-            super(AssociationForm, self).__init__(*args, **kwargs)
-            self.helper = FormHelper(self)
-
-            # self.helper.layout.append()
-
-        # Uin-form
-        # helper = FormHelper()
-        # helper.form_class = 'form-horizontal'
-        # helper.layout = Layout(
-        #     Field('name', css_class='input-xlarge'),
-        #     Field('description', rows='3', css_class='input-xlarge')
-        # )
 
 class IdentifierForm(UserCreationForm):
     class Meta:
@@ -54,3 +21,34 @@ class IdentifierForm(UserCreationForm):
         widgets = {
             'username': forms.HiddenInput(attrs={'id': 'association_id'})
         }
+
+
+class AssociationForm(forms.ModelForm):
+    class Meta:
+        model = Association
+        # exclude = ['identifier']
+        fields = (
+            'name',
+            'description',
+            'year_of_creation',
+            'address',
+            'phone',
+            'initials',
+            'country',
+            # 'logo',
+            # 'identifier'
+        )
+        labels = {
+            'name': _("Association name"),
+            'year_of_creation': _('Date of Creation')
+        }
+        widgets = {
+            'year_of_creation': forms.TextInput(attrs={'placeholder': "Format: 'year-month-day'"}),
+            # 'identifier': forms.HiddenInput(attrs={'id': 'identifier_id'})
+        }
+
+        def __init__(self, *args, **kwargs):
+            super(AssociationForm, self).__init__(*args, **kwargs)
+            self.helper = FormHelper(self)
+
+            # self.helper.layout.append()

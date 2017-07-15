@@ -13,7 +13,7 @@ def about(request):
 def contact(request):
     return render(request, 'app/contact_us.html')
 def news(request):
-    return render(request, 'app/news.html')
+    return render(request, 'app/news.html', {})
 def articles(request):
     return render(request, 'app/articles.html')
 def article_page(request):
