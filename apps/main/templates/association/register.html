@@ -17,17 +17,13 @@
 		<form method="post">
 				{% csrf_token %}
 					<div class="fieldset">
-  						{% for field in form1 %}
-  								{{ field|as_crispy_field }}
-  								<span>{{ field.help_text|safe }}</span>
-                  <!-- <div class="alert alert-danger">
-                    <strong>{{ error|escape }}</strong>
-                </div> -->
-  						{% endfor %}
-  						{% for field in form2 %}
-  								{{ field|as_crispy_field }}
-  						{% endfor %}
-
+						{% for field in form1 %}
+								{{ field|as_crispy_field }}
+								<span>{{ field.help_text|safe }}</span>
+						{% endfor %}
+						{% for field in form2.visible_fields %}
+								{{ field|as_crispy_field }}
+						{% endfor %}
 					</div>
 
 					<div class="terms-con">
@@ -36,7 +32,7 @@
 							<li><a href="{%url 'main:terms_conditions'%}">I agree with the terms and conditions of the site</a></li>
 						</ul>
 					</div>
-				<button type="submit" id="registerBtn" name="button">Register</button>
+				<button type="submit" id="registerBtn" name="button" disabled="disabled">Register</button>
 		</form>
 
   </div>
