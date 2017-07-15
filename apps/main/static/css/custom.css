@@ -159,12 +159,13 @@ a-color li{
 }
 .stats{
     padding-top: 2%;
-    background-image: url('img/analytic.png');
+    background-image: url('../img/stats.png');
     background-position: center;
     background-repeat: no-repeat ;
     background-attachment: fixed;
     background-size: cover;
     min-height: 200px;
+    margin-bottom:40px; 
 
 }
 .stats .col-lg-4 {
