@@ -75,7 +75,6 @@ a-color li{
     transform: scale(1.05);
   }
   #menu a:focus,
-  #menu a:active,
   #menu a:active {
       color: black;
       background-color: #0676b0;
@@ -165,7 +164,7 @@ a-color li{
     background-attachment: fixed;
     background-size: cover;
     min-height: 200px;
-    margin-bottom:40px; 
+    margin-bottom:40px;
 
 }
 .stats .col-lg-4 {
@@ -188,13 +187,12 @@ a-color li{
  */
 
 .blog-header {
-  padding-top: 75px;
   padding-bottom: 20px;
 }
 .blog-title {
   margin-top: 30px;
   margin-bottom: 0;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: normal;
 }
 .blog-description {
@@ -206,14 +204,14 @@ a-color li{
  */
 
 .blog-main {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
 /* Sidebar modules for boxing content */
 .sidebar-module {
-  padding: 15px;
-  margin: 0 -15px 15px;
+  padding: 10px;
+
 }
 .sidebar-module-inset {
   padding: 15px;
@@ -247,15 +245,16 @@ a-color li{
 }
 .blog-post-title {
   margin-bottom: 5px;
-  font-size: 40px;
+  font-size: 20px;
 }
 .blog-post-meta {
   margin-bottom: 20px;
   color: #999;
 }
 /*Article Design*/
-.article{
-    margin-top:100px;
+.body{
+    margin-top:110px;
     padding-left: 80px;
-    padding-right: 130px;
+    padding-right: 100px;
+    margin-left: 10px;
   }
