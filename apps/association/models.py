@@ -21,6 +21,7 @@ class Association(models.Model):
     logo = models.ImageField(upload_to='Images/Association/logo', blank=True)
     country = models.ForeignKey('member.Country', null=True)
     identifier = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    email_confirmed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

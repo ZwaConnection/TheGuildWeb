@@ -10,6 +10,7 @@ from crispy_forms.helper import FormHelper
 
 
 class IdentifierForm(UserCreationForm):
+    email = forms.EmailField(max_length=254, help_text='Please , enter a valid Email address',required=True)
     class Meta:
         model = User
         fields = (
