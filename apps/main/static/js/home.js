@@ -1,19 +1,23 @@
 $(document).ready(function(){
   console.log('Loaded');
 
-  $('#id_initials').change(function(){
-      $('#association_id').val($(this).val());
+  $('input#id_initials').change(function(){
+      $('input#association_id').val($(this).val());
   });
 
-  $('#terms').click(function(){
-    // check if the checkbox is checked
-    if($(this).is(':checked')){
-      $('#registerBtn').removeAttr('disabled');
-    }else{
-      $('#registerBtn').attr('disabled', true);
-    }
-  });
 
+  console.log($('input#association_id').val());
+  // console.log($('input#identifier_id').val());
+  //
+  // $('#terms').click(function(){
+  //   // check if the checkbox is checked
+  //   if($(this).is(':checked')){
+  //     $('#registerBtn').removeAttr('disabled');
+  //   }else{
+  //     $('#registerBtn').attr('disabled', 'disabled');
+  //   }
+  // });
+  //
   $(function(){
     $('#id_year_of_creation').datepicker({ dateFormat: 'yy-mm-dd'});
   });
