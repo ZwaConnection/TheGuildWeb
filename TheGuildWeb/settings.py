@@ -129,3 +129,6 @@ MEDIA_URL = '/media/'
 
 #Templates pack
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+#Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

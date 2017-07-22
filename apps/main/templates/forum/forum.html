@@ -1,7 +1,14 @@
 {% extends 'app/base.html' %}
 
-{% block title %}Home{% endblock %}
+{% load staticfiles %}
+{% block title %}Forum{% endblock %}
 
 {% block content %}
+<div class="title">
+<img src="{%static "img/forum.jpg" %}">
+<div class="container">
+  <h1>Forum</h1>
+</div><!-- /container -->
+</div><!-- /logo -->
 
 {% endblock %}

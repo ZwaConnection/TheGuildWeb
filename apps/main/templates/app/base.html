@@ -79,18 +79,22 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
+      <!-- Alert Messages Block -->
+      {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+            <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>
+              <a class="close" data-dismiss="alert" href="#">&times;</a>
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      <!-- End of Alert Messages block -->
     </nav>
     </header>
   <body>
-        <!-- Alert Messages Block -->
-        {% if messages %}
-          <div class="messages">
-            {% for message in messages %}
-              <p {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</p>
-            {% endfor %}
-          </div>
-        {% endif %}
-        <!-- End of Alert Messages block -->
+
 
         <section>
             {% block content %}

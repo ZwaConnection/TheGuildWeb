@@ -1,7 +1,12 @@
 {% extends 'app/base.html' %}
-
-{% block title %}Home{% endblock %}
+{% load staticfiles %}
+{% block title %}Online Chat{% endblock %}
 
 {% block content %}
-
+<div class="title">
+<img src="{%static "img/chat.jpeg" %}">
+<div class="container">
+  <h1>Online Chat</h1>
+</div><!-- /container -->
+</div><!-- /logo -->
 {% endblock %}
