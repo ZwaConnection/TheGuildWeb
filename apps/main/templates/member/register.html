@@ -1,5 +1,7 @@
 {% extends 'app/base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}Register{% endblock %}
 
 {% block content %}
@@ -10,6 +12,26 @@
           <h1>Register as a user</h1>
         </div>
             <p>Register as <a href="{%url 'association:register'%}"><button type="button" class="btn btn-success">Association</button></a></p>
+            <form method="post">
+        				{% csrf_token %}
+        					<div class="fieldset">
+          						{% for field in f %}
+          								{{ field|as_crispy_field }}
+          						{% endfor %}
+          						{% for field in f1 %}
+          								{{ field|as_crispy_field }}
+          						{% endfor %}
+
+        					</div>
+
+        					<div class="terms-con">
+        						<ul>
+        							<li><input type="checkbox" id="terms" name="name"></li>
+        							<li><a href="{%url 'main:terms_conditions'%}">I agree with the terms and conditions of the site</a></li>
+        						</ul>
+        					</div>
+        				<button type="submit" id="registerBtn" name="button" class="btn btn-default">Register</button>
+        		</form>
        </div>
     </div>
 </div>
