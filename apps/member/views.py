@@ -12,7 +12,7 @@ def login(request):
     return render(request, 'member/login.html', {})
 
 def profile(request):
-    return render(request, 'member/profile.html')
+    return render(request, 'member/user_profile.html')
 
 def user_register(request):
     return render(request, 'member/register.html', {})
