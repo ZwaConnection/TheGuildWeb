@@ -72,8 +72,13 @@
             <li><a href="{%url 'main:chat'%}">Online Chat</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            {% if request.user.is_authenticated %}
+            <li><a href="{%url 'member:profile'%}"><i class="fa fa-user" style="font-size:30px;color:#d56a14;"></i> {{ request.user.username }}</a></li>
+            <li><a href="{%url 'member:logout'%}"><i class="fa fa-sign-out" style="font-size:32px;color:#d56a14;"></i> logout</a></li>
+            {% else %}
             <li><a href="{%url 'member:register'%}"><i class="fa fa-user-plus" style="font-size:30px;color:#d56a14;"></i>Register</a></li>
             <li><a href="{%url 'member:login'%}"><i class="fa fa-user" style="font-size:32px;color:#d56a14;"></i>Login</a></li>
+            {% endif %}
             <li><a href="#"><img class="lang" src="{% static "img/fr.png"%}" alt=""> FR</a></li>
             <li><a href="#"><img class="lang" src="{%static "img/en.png"%}" alt=""> EN</a></li>
           </ul>
