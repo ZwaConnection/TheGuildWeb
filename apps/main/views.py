@@ -9,22 +9,35 @@ def index(request):
     context = {}
     return render(request, 'app/index.html', context)
 def about(request):
-    return render(request, 'app/about.html')
+    context = {}
+    return render(request, 'app/about.html',context)
 def contact(request):
-    return render(request, 'app/contact_us.html')
+    context = {}
+    return render(request, 'app/contact_us.html',context)
 def news(request):
-    return render(request, 'app/news.html', {})
+    context = {}
+    return render(request, 'app/news.html',context)
 def articles(request):
-    return render(request, 'app/articles.html')
+    context = {}
+    return render(request, 'app/articles.html',context)
 def article_page(request):
-    return render(request, 'app/article_page.html')
+    context = {}
+    return render(request, 'app/article_page.html',context)
 def feedback(request):
-    return render(request, 'app/feedback.html')
+    context = {}
+    return render(request, 'app/feedback.html',context)
 def announcement_page(request):
-    return render(request, 'app/announcement_page.html')
+    context = {}
+    return render(request, 'app/announcement_page.html',context)
 def policy(request):
-    return render(request, 'app/policy.html')
+    context = {}
+    return render(request, 'app/policy.html',context)
 def chat(request):
-    return render(request, 'app/chat.html')
+    context = {}
+    return render(request, 'app/chat.html',context)
 def terms_conditions(request):
-    return render(request, 'app/terms_conditions.html')
+    context = {}
+    return render(request, 'app/terms_conditions.html',context)
+def announcement(request):
+    context = {}
+    return render(request, 'app/announcement.html',context)

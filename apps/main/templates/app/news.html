@@ -9,5 +9,56 @@
       <h1>News</h1>
     </div><!-- /container -->
   </div><!-- /logo -->
-  
+
+<div class="new">
+    <div class="wrapper">
+        <div class="main">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                  <div class="section">
+                    <div class="teaser clearfix">
+                      <h3><a href="news-article.html">Vestibulum ornare suscipit tempu</a></h3>
+                      <p class="blog-post-meta">Fri. 27 November 2015 by <a href="#">Mark</a></p>
+                      <a href="news-article.html" class="thumbnail"><i><img src="{%static "img/logo-mini2.png" %}" alt="Vestibulum ornare suscipit tempu"></i></a>
+                      <div class="teaser-content">
+                        <p>In ipsum lectus, pharetra vel rutrum at, gravida sollicitudin ipsum. Nam id pharetra felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed feugiat ligula id augue gravida dapibus.</p>
+                        <p><a href="{%url 'main:article_page' %}">Read more...</a></p>
+                      </div><!-- /teaser-content -->
+                    </div><!-- /teaser clearfix -->
+                    <hr>
+                    <div class="teaser clearfix">
+                      <h3><a href="news-article.html">Cum sociis natoque penatibus et magnis</a>&nbsp;<small>18 Aug 2012</small></h3>
+                      <a href="news-article.html" class="thumbnail"><i><img src="images/news-thumb/002.jpg" alt="Vestibulum ornare suscipit tempu"></i></a>
+                      <div class="teaser-content">
+                        <p>Suspendisse potenti. Duis tincidunt cursus elit, vel faucibus lectus feugiat a. Integer pretium dui ut ligula bibendum suscipit. Vestibulum ornare suscipit tempus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        <p><a href="news-article.html">Read more...</a></p>
+                      </div><!-- /teaser-content -->
+                    </div><!-- /teaser clearfix -->
+                    <hr>
+                    <div class="teaser clearfix">
+                      <h3><a href="news-article.html">Suspendisse id urna dui, ut vestibulum massa</a>&nbsp;<small>10 Feb 2012</small></h3>
+                      <a href="news-article.html" class="thumbnail"><i><img src="images/news-thumb/003.jpg" alt="Vestibulum ornare suscipit tempu"></i></a>
+                      <div class="teaser-content">
+                        <p>Aliquam eu nulla sit amet ligula sagittis pretium. Mauris vitae purus nisi. Aenean quam massa, convallis vitae fringilla sed, aliquam non lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Duis tincidunt cursus elit, vel faucibus lectus feugiat a.</p>
+                        <p><a href="news-article.html">Read more...</a></p>
+                      </div><!-- /teaser-content -->
+                    </div><!-- /teaser clearfix -->
+                    <hr>
+                </div><!--/section-->
+            <nav>
+            <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+            </ul>
+            </nav>
+        </div><!-- /row -->
+            {% include "app/announcement.html" %}
+        </div><!--/container -->
+
+    </div><!--/main-->
+
+</div><!--/wrapper-->
+
+</div><!--/new-->
 {% endblock %}

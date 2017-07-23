@@ -235,6 +235,7 @@ a-color li{
 .pager {
   margin-bottom: 60px;
   text-align: left;
+  padding-top: 50px;
 }
 .pager > li > a {
   width: 140px;
@@ -266,6 +267,110 @@ a-color li{
     padding-right: 100px;
     margin-left: 10px;
   }
+  /*********
+    main
+    *********/
+    .new{
+        margin-left: 0px;
+    }
+    .main {
+    background:#ffffff;
+    margin: 0 auto;
+    padding:0 0 30px;
+    position:relative;
+    width:1200px;
+    z-index:3;
+    -webkit-box-shadow:0 0 10px rgba(0,0,0,0.3);
+    -moz-box-shadow:0 0 10px rgba(0,0,0,0.3);
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+    }
+    .main .row {
+    position:relative;
+    }
+    .main .section {
+    padding-top:10px;
+    }
+    .main .section:first-child .page-header {
+    margin-top:0;
+    }
+    .main .breadcrumb:first-child {
+    margin-top:30px;
+    }
+    .main .breadcrumb + .section {
+    padding-top:10px;
+    }
+    /*********
+    carousel
+    *********/
+   .carousel img {
+     width:100%;
+   }
+   .carousel-caption a,
+   .carousel-caption p {
+     color:#dddddd;
+   }
+   .carousel-caption a:hover {
+     color:#ffffff;
+     text-decoration:none;
+   }
+   /*********
+     teaser
+     *********/
+    .teaser .thumbnail {
+      float:left;
+      height:100px;
+      margin-bottom:10px;
+      width:100px;
+    }
+    .teaser .thumbnail i {
+      display:block;
+      height:100px;
+      overflow:hidden;
+      position:relative;
+      width:100%;
+    }
+    .teaser .thumbnail img {
+      width:100%;
+    }
+    .teaser .thumbnail + .teaser-content {
+      margin-left:130px;
+    }
+    .teaser h3>a{
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: bold;
+            font-size: 25px;
+            color: #063852;
+    }
+    /*Annoucement board*/
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Sidebar modules for boxing content */
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+}
+.sidebar-module-inset {
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
+}
+#board{
+    padding-top: 40px;
+}
+
+
 /*Login page Design*/
 
 .form-signin {

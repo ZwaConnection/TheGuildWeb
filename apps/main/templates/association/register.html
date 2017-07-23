@@ -12,12 +12,13 @@
   <h1>Association Registration</h1>
 </div><!-- /container -->
 </div><!-- /logo -->
-<div class="body">
-<div class="row">
-  <div class="col-md-8">
-    <div class="page-header">
-      <h1>Register as an association</h1>
-    </div>
+<div class="new">
+    <div class="wrapper">
+    <div class="main">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+              <div class="section">
         <p>Register as <a href="{%url 'member:register'%}"><button type="button" class="btn btn-success">User</button></a></p>
 		<form method="post">
 				{% csrf_token %}
@@ -47,5 +48,12 @@
   </div>
 </div>
 </div>
+</div><!--/container -->
+
+</div><!--/main-->
+
+</div><!--/wrapper-->
+
+</div><!--/new-->
 
 {% endblock %}
