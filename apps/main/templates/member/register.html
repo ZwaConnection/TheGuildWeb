@@ -1,7 +1,9 @@
 {% extends 'app/base.html' %}
 {% load staticfiles %}
 
-{% block title %}User Register{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block title %}Register{% endblock %}
 
 {% block content %}
 <div class="title">
@@ -10,15 +12,42 @@
   <h1>User Registration</h1>
 </div><!-- /container -->
 </div><!-- /logo -->
-<div class="body">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="page-header">
-          <h1>Register as a user</h1>
-        </div>
+<div class="new">
+    <div class="wrapper">
+    <div class="main">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+              <div class="section">
             <p>Register as <a href="{%url 'association:register'%}"><button type="button" class="btn btn-success">Association</button></a></p>
+            <form method="post">
+        				{% csrf_token %}
+        					<div class="fieldset">
+          						{% for field in f %}
+          								{{ field|as_crispy_field }}
+          						{% endfor %}
+          						{% for field in f1 %}
+          								{{ field|as_crispy_field }}
+          						{% endfor %}
+
+        					</div>
+
+        					<div class="terms-con">
+        						<ul>
+        							<li><input type="checkbox" id="terms" name="name"></li>
+        							<li><a href="{%url 'main:terms_conditions'%}">I agree with the terms and conditions of the site</a></li>
+        						</ul>
+        					</div>
+        				<button type="submit" id="registerBtn" name="button" class="btn btn-default">Register</button>
+        		</form>
        </div>
     </div>
 </div>
+</div><!--/container -->
 
+</div><!--/main-->
+
+</div><!--/wrapper-->
+
+</div><!--/new-->
 {% endblock %}

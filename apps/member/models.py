@@ -514,18 +514,18 @@ class Education(models.Model):
 		return self.university
 class Profile(models.Model):
 	user = models.OneToOneField(User)
-	dob = models.DateField(auto_now=True)
+	dob = models.DateField(auto_now=False, auto_now_add=False)
 	f = 'female'
 	m = 'male'
 	gender_choices = (
-		(f,'female'),
-		(m,'male'),
+		(f,'Female'),
+		(m,'Male'),
 		)
 	gender = models.CharField(max_length=6, choices=gender_choices, default=f)
 	nationality = models.ForeignKey(Country, related_name='nationality')
-	curent_country = models.ForeignKey(Country, related_name='curent_country')
-	user_sate = models.ForeignKey(State, related_name='user_state')
-	User_city =  models.ForeignKey(City, related_name='user_city')
+	current_country = models.ForeignKey(Country, related_name='curent_country')
+	user_state = models.ForeignKey(State, related_name='user_state')
+	user_city =  models.ForeignKey(City, related_name='user_city')
 	address = models.TextField(max_length=255)
 	education = models.ForeignKey(Education, related_name='education')
 	created_at = models.DateTimeField(auto_now_add=True)
