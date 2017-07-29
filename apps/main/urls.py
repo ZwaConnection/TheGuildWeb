@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^articles/$', views.articles, name='articles'),
     url(r'^article_page/$', views.article_page, name='article_page'),
     url(r'^feedback/$', views.feedback, name='feedback'),
-    url(r'^announcement_page/$', views.announcement_page, name='announcement_page'),
+    url(r'^announcements/$', views.announcements, name='announcements'),
     url(r'^policy/$', views.policy, name='policy'),
     url(r'^terms_conditions/$', views.terms_conditions, name='terms_conditions'),
 ]

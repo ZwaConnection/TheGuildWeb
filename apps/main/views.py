@@ -26,9 +26,6 @@ def article_page(request):
 def feedback(request):
     context = {}
     return render(request, 'app/feedback.html',context)
-def announcement_page(request):
-    context = {}
-    return render(request, 'app/announcement_page.html',context)
 def policy(request):
     context = {}
     return render(request, 'app/policy.html',context)
@@ -38,6 +35,6 @@ def chat(request):
 def terms_conditions(request):
     context = {}
     return render(request, 'app/terms_conditions.html',context)
-def announcement(request):
+def announcements(request):
     context = {}
-    return render(request, 'app/announcement.html',context)
+    return render(request, 'app/announcements.html',context)

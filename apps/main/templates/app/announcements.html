@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+
+{% block title %}announcements{% endblock %}
+{% load staticfiles %}
+{% block content %}
+<div class="title">
+<img src="{%static "img/news.jpg" %}">
+<div class="container">
+  <h1>Announcements</h1>
+</div><!-- /container -->
+</div><!-- /logo -->
+
+<div class="new">
+    <div class="wrapper">
+        <div class="main">
+            <div class="container">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th id="ann_title">Title</th>
+                        <th id="ann_other">Owner</th>
+                        <th id="ann_other">Publication Date</th>
+                        <th id="ann_other">Hint</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><a href="#">The Guild Web Launch</a></td>
+                        <td><a href="#">TGW</a></td>
+                        <td><p class="blog-post-meta">27 October 2017</p></td>
+                        <td>154</td>
+                      </tr>
+                </tbody>
+               </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
