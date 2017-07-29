@@ -45,10 +45,17 @@
         <div>
             <nav class="navbar navbar-default" id="auth">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-envelope" style="font-size:20px;color:#d56a14;"></i>contact@theguildweb.com</a></li>
+                    <li><a href="#"><i class="fa fa-envelope" style="font-size:20px;color:#d56a14;"></i> contact@theguildweb.com</a></li>
                   {% if request.user.is_authenticated %}
-                  <li><a href="{%url 'member:profile'%}"><i class="fa fa-user" style="font-size:20px;color:#d56a14;"></i> {{ request.user.username }}</a></li>
-                  <li><a href="{%url 'member:logout'%}"><i class="fa fa-sign-out" style="font-size:20px;color:#d56a14;"></i> logout</a></li>
+                  <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user" style="font-size:20px;color:#d56a14;"><span class="caret"></span></i> Hi! {{ request.user.username }}</a>
+                  <ul class="dropdown-menu" id="auth-dropdown">
+                    <li><a href="{%url 'member:profile'%}">Profile</a></li>
+                    <li><a href="{%url 'member:account'%}">Account</a></li>
+                    <li><a href="{%url 'member:logout'%}"><i class="fa fa-sign-out" style="font-size:20px;color:#a30303;"></i>Logout</a></li>
+                  </ul>
+                </li>
+
                   {% else %}
                   <li><a href="{%url 'member:register'%}"><i class="fa fa-user-plus" style="font-size:20px;color:#d56a14;"></i>Register</a></li>
                   <li><a href="{%url 'member:login'%}"><i class="fa fa-user" style="font-size:20px;color:#d56a14;"></i>Login</a></li>

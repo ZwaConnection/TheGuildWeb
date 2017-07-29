@@ -30,9 +30,21 @@ textarea{
     background-color: #063852;
     border-bottom: 1px solid #a30303;
     border-radius: 0px;
-    margin: auto;
+    margin: 0 auto;
+}
+#auth ul{
+    margin: 0 auto;
+    text-align: center;
+}
+#auth-dropdown{
+    background-color: #063852;
+    color: #0676b0;
+    border-radius: 5px;
 }
 
+#auth-dropdown li a:hover{
+    background-color: #0676b0;
+}
 /*bottom Menu*/
 #bottom{
     background-image: url('../img/map.png');
@@ -86,6 +98,7 @@ a-color li{
 #menu li:hover, li:active{
   background: #0676b0;
   border-radius: 5px;
+  color: black;
 }
 
 #menu li a:hover,{
@@ -97,8 +110,8 @@ a-color li{
     -webkit-transform:  scale(1.07);/* Chrome, Safari, Opera */
     transform: scale(1.05);
   }
-  #menu a:focus,
-  #menu a:active {
+  #menu li a:focus,
+  #menu li a:active {
       color: black;
       background-color: #0676b0;
   }
@@ -439,7 +452,7 @@ a-color li{
   color:#ebebeb;
   margin-bottom:-80px;
   overflow:hidden;
-  padding:80px 0 90px;
+  padding:90px 0 90px;
   position:relative;
   z-index:1;
   -webkit-box-shadow:0 3px 10px rgba(0,0,0,0.3);

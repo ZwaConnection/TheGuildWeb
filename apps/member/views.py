@@ -37,8 +37,8 @@ def user_register(request):
         'f1':f1
     })
 
-def accounts(request):
-    return render(request, 'member/accounts.html')
+def account(request):
+    return render(request, 'member/account.html')
 
 def logout(request):
     auth.logout(request)
