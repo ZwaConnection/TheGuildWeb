@@ -23,12 +23,8 @@
             <form method="post">
         				{% csrf_token %}
         					<div class="fieldset">
-          						{% for field in f %}
-          								{{ field|as_crispy_field }}
-          						{% endfor %}
-          						{% for field in f1 %}
-          								{{ field|as_crispy_field }}
-          						{% endfor %}
+          						{{ f | crispy }}
+                      {{ f1 | crispy }}
 
         					</div>
 
