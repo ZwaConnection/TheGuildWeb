@@ -11,7 +11,7 @@ from crispy_forms.helper import FormHelper
 
 class UserForm(UserCreationForm):
     email = forms.EmailField(max_length=254, help_text='Please , enter a valid Email address',required=True)
-    first_name = forms.CharField(max_length=254, required=True)
+    first_name = forms.CharField(max_length=254)
     last_name = forms.CharField(max_length=254)
     class Meta:
         model = User
@@ -20,8 +20,8 @@ class UserForm(UserCreationForm):
             'first_name',
             'last_name',
             'email',
-            'password1',
-            'password2'
+            # 'password1',
+            # 'password2'
         )
 
 
@@ -37,6 +37,7 @@ class UserProfileForm(forms.ModelForm):
             'user_city',
             'address',
             'education',
+            # 'association'
         )
         labels = {
             'dob': _("Date Of Birth"),
@@ -46,11 +47,11 @@ class UserProfileForm(forms.ModelForm):
         }
         widgets = {
             'dob': forms.TextInput(attrs={'placeholder': "Format: 'year-month-day'"}),
-            'nationality': forms.TextInput(attrs={'placeholder': 'Your Country Name ...'}),
-            'current_country': forms.TextInput(),
-            'user_state': forms.TextInput(),
-            'user_city': forms.TextInput(),
-            'education': forms.TextInput()
+            # 'nationality': forms.TextInput(attrs={'placeholder': 'Your Country Name ...'}),
+            # 'current_country': forms.TextInput(),
+            # 'user_state': forms.TextInput(),
+            # 'user_city': forms.TextInput(),
+            # 'education': forms.TextInput()
             # 'identifier': forms.HiddenInput(attrs={'id': 'identifier_id'})
         }
 

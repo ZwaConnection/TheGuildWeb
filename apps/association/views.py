@@ -61,8 +61,7 @@ def activate(request, uidb64, token):
         user.is_active = True
         user.association.email_confirmed = True
         user.save()
-        login(request, user)
-        return redirect('main:index')
+        return redirect('member:login')
     else:
         return render(request, 'association/account_activation_invalid.html', {})
 
