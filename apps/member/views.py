@@ -12,10 +12,29 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from .forms import *
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 
-# Create your views here.
+# create a function to resolve email to username
+def get_user(email):
+    try:
+        return User.objects.get(email=email.lower())
+    except User.DoesNotExist:
+        return None
 
+# create a view that authenticate user with email
 def login(request):
+    context = {}
+    # email = request.POST['email']
+    # password = request.POST['password']
+    # username = get_user(email)
+    # user = authenticate(username=username, password=password)
+    # if user is not None:
+    #     if user.is_active:
+    #         login(request, user)
+    #         return render(request, 'member/user_profile.html')
+    #     else:
+    #         messages.error(request, 'Please correct the information below')
     return render(request, 'member/login.html', {})
 
 def profile(request):

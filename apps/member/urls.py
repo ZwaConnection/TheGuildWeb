@@ -1,9 +1,10 @@
 from django.conf.urls import url
 
 from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    url(r'^$', views.login, name = 'login'),
+    url(r'^$',  auth_views.login, {'template_name': 'member/login.html'}, name='login'),
     url(r'^profile/$', views.profile, name = 'profile'),
     url(r'^register/$', views.user_register, name = 'register'),
     url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
