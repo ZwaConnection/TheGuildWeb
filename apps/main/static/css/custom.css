@@ -381,9 +381,6 @@ a-color li{
     color: white;
     text-align: center;
 }
-#ann_title{
-    width: 40%;
-}
 #ads{
     overflow: hidden;
     width: 240px;
@@ -412,7 +409,13 @@ a-color li{
     from {top: 0px;}
     to {top: 100px;}
 }
-
+/*Annoucements Page*/
+#ann_title{
+    width: 40%;
+}
+#ann_body{
+    height: 700px;
+}
 /*Login page Design*/
 
 .form-signin {
