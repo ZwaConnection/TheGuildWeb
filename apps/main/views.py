@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.shortcuts import render, redirect
-
 from django.http import HttpResponse
-
+from django.contrib.auth.decorators import login_required
 def index(request):
     context = {}
     return render(request, 'app/index.html', context)
@@ -29,12 +27,14 @@ def feedback(request):
 def policy(request):
     context = {}
     return render(request, 'app/policy.html',context)
-def chat(request):
-    context = {}
-    return render(request, 'app/chat.html',context)
 def terms_conditions(request):
     context = {}
     return render(request, 'app/terms_conditions.html',context)
 def announcements(request):
     context = {}
     return render(request, 'app/announcements.html',context)
+
+@login_required(login_url='/member/')
+def chat(request):
+    context = {}
+    return render(request, 'app/chat.html',context)

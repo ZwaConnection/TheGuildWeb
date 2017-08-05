@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 import json
 from django.shortcuts import render, redirect
 from django.contrib import auth
@@ -14,6 +13,7 @@ from .tokens import account_activation_token
 from .forms import *
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # create a function to resolve email to username
 def get_user(email):
