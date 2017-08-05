@@ -11,7 +11,8 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from .forms import *
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .decorators import anonymous_required
@@ -98,6 +99,23 @@ def account(request):
     return render(request, 'member/account.html',{
             'update_form': u,
             'profile_form': p
+    })
+
+@login_required(login_url='/member/')
+def change_password(request):
+    if request.method == 'POST':
+        f = PasswordChangeForm(request.user, request.POST)
+        if f.is_valid():
+            user = f.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Your password has been changed successfully')
+            return redirect('member:profile')
+        else:
+            messages.error(request, 'Please correct the errors below')
+    else:
+        f = PasswordChangeForm(request.user)
+    return render(request, 'member/change_password.html',{
+        'password_form': f
     })
 
 def logout(request):
