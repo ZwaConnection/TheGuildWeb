@@ -39,6 +39,7 @@ def login(request):
     #         messages.error(request, 'Please correct the information below')
     return render(request, 'member/login.html', {})
 
+@login_required
 def profile(request):
     return render(request, 'member/user_profile.html')
 

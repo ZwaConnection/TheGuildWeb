@@ -1,6 +1,6 @@
 {% extends 'app/base.html' %}
 
-{% block head_title %}{{block.super}}| Member Account{% endblock %}
+{% block head_title %}{{block.super}}| {{ request.user }} settings {% endblock %}
 
 {% block content %}
 
