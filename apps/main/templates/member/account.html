@@ -1,7 +1,23 @@
 {% extends 'app/base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}{{block.super}}| {{ request.user }} settings {% endblock %}
 
 {% block content %}
+
+<div class="body">
+
+  <h1>Edit your account </h1>
+
+  <form method="post">
+  {% csrf_token %}
+  {{ update_form | crispy }}
+  {{ profile_form | crispy }}
+  <button type="submit">Save changes</button>
+</form>
+
+</div>
+
 
 {% endblock %}

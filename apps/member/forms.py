@@ -9,6 +9,19 @@ from crispy_forms.helper import FormHelper
 # from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 
 
+class UpdateUserForm(forms.ModelForm):
+    email = forms.EmailField(max_length=254, help_text='Please , enter a valid Email address',required=True)
+    first_name = forms.CharField(max_length=254)
+    last_name = forms.CharField(max_length=254)
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'first_name',
+            'last_name',
+            'email'
+            )
+
 class UserForm(UserCreationForm):
     email = forms.EmailField(max_length=254, help_text='Please , enter a valid Email address',required=True)
     first_name = forms.CharField(max_length=254)

@@ -39,7 +39,7 @@ def login(request):
     #         messages.error(request, 'Please correct the information below')
     return render(request, 'member/login.html', {})
 
-@login_required
+@login_required(login_url='/member/')
 def profile(request):
     return render(request, 'member/user_profile.html')
 
@@ -80,8 +80,25 @@ def user_register(request):
         'country': json.dumps(country_list)
     })
 
+@login_required(login_url='/member/')
 def account(request):
-    return render(request, 'member/account.html')
+    if request.method == 'POST':
+        u = UpdateUserForm(request.POST, instance=request.user)
+        p = UserProfileForm(request.POST, instance=request.user.profile)
+        if u.is_valid() and p.is_valid():
+            u.save()
+            p.save()
+            messages.success(request, 'Your profile has been updated successfully')
+            return redirect('member:profile')
+        else:
+            messages.error(request, 'Correct the error below')
+    else:
+        u = UpdateUserForm(instance=request.user)
+        p = UserProfileForm(instance=request.user.profile)
+    return render(request, 'member/account.html',{
+            'update_form': u,
+            'profile_form': p
+    })
 
 def logout(request):
     auth.logout(request)
