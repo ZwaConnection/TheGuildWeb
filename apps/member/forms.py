@@ -9,6 +9,12 @@ from crispy_forms.helper import FormHelper
 # from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 
 
+class ForgotPasswordForm(forms.ModelForm):
+    email = forms.EmailField(max_length=254, help_text='Please , enter your email address',required=True)
+    class Meta:
+        model = User
+        fields = ('email',)
+
 class UpdateUserForm(forms.ModelForm):
     email = forms.EmailField(max_length=254, help_text='Please , enter a valid Email address',required=True)
     first_name = forms.CharField(max_length=254)

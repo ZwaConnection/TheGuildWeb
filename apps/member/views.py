@@ -118,6 +118,22 @@ def change_password(request):
         'password_form': f
     })
 
+@anonymous_required
+def forgot_password(request):
+    if request.method == 'POST':
+        f = ForgotPasswordForm(request.POST)
+        if f.is_valid():
+            print 'Ok'
+            messages.success(request, 'An link has been sent to your email address')
+        else:
+            messages.error(request, 'Your account is not activated')
+    else:
+        f = ForgotPasswordForm()
+
+    return render (request, 'member/forgot_password.html', {
+        'forgot_password_form': f
+    })
+
 def logout(request):
     auth.logout(request)
     return redirect('main:index')
