@@ -14,6 +14,7 @@ from .forms import *
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from .decorators import anonymous_required
 
 # create a function to resolve email to username
 def get_user(email):
@@ -23,6 +24,7 @@ def get_user(email):
         return None
 
 # create a view that authenticate user with email
+@anonymous_required
 def login(request):
     context = {}
     # email = request.POST['email']
@@ -40,6 +42,7 @@ def login(request):
 def profile(request):
     return render(request, 'member/user_profile.html')
 
+@anonymous_required
 def user_register(request):
     countries = Country.objects.all()
     country_list = [ c.country for c in countries ]
