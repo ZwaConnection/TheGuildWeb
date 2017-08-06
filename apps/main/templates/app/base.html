@@ -78,17 +78,6 @@
           <a class="navbar-brand" <a href="{%url 'main:index'%}"><img class="logo" src="{% static "img/logo-mini2.png" %}" alt=""></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-        <!--
-            <form class="navbar-form navbar-right">
-           <div class="form-group">
-             <input type="text" placeholder="Email" class="form-control">
-           </div>
-           <div class="form-group">
-             <input type="password" placeholder="Password" class="form-control">
-           </div>
-           <button type="submit" class="btn btn-success">Sign in</button>
-         </form>
-     -->
           <ul class="nav navbar-nav">
             <li><a href="{%url 'main:index'%}">Home</a></li>
             <li><a href="{%url 'main:news'%}">News</a></li>
@@ -96,16 +85,15 @@
             <li><a href="{%url 'association:associations'%}">Associations</a></li>
             <li><a href="{%url 'main:chat'%}">Online Chat</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-           <div class="input-group">
-             <input type="text" class="form-control" placeholder="Search">
-             <div class="input-group-btn">
-               <button class="btn btn-primary" type="submit">
-                 <i class="glyphicon glyphicon-search"></i>
-               </button>
+          <div id="search">
+             <form action="submit" class="search-form">
+                 <div class="form-group has-feedback">
+             		<label for="search" class="sr-only">Search</label>
+             		<input type="text" class="form-control" name="search" id="search" placeholder="search">
+               		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+             	</div>
+             </form>
              </div>
-           </div>
-          </form>
         </div><!--/.nav-collapse -->
       </div>
       <!-- Alert Messages Block -->
