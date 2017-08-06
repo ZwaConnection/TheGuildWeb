@@ -11,10 +11,12 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from .forms import *
+from ..member.decorators import anonymous_required
 
 # Create your views here.
 
 
+@anonymous_required
 def register(request):
     if request.method == 'POST':
         form1 = AssociationForm(request.POST)

@@ -21,8 +21,8 @@
                    Remember me
                </label>
                <br>
-               <p><a href="#">Forgot password? </a></p>
-               <p><a href="https://www.google.com">Create account</a></p>
+               <p><a href="{% url 'member:forgot_password' %}">Forgot password? </a></p>
+               <p><a href="{% url 'member:register' %}">Create account</a></p>
                </form>
 
            </div> <!-- /container -->

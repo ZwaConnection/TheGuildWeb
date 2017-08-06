@@ -11,9 +11,11 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from .forms import *
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from .decorators import anonymous_required
 
 # create a function to resolve email to username
 def get_user(email):
@@ -23,6 +25,7 @@ def get_user(email):
         return None
 
 # create a view that authenticate user with email
+@anonymous_required
 def login(request):
     context = {}
     # email = request.POST['email']
@@ -37,9 +40,11 @@ def login(request):
     #         messages.error(request, 'Please correct the information below')
     return render(request, 'member/login.html', {})
 
+@login_required(login_url='/member/')
 def profile(request):
     return render(request, 'member/user_profile.html')
 
+@anonymous_required
 def user_register(request):
     countries = Country.objects.all()
     country_list = [ c.country for c in countries ]
@@ -76,8 +81,58 @@ def user_register(request):
         'country': json.dumps(country_list)
     })
 
+@login_required(login_url='/member/')
 def account(request):
-    return render(request, 'member/account.html')
+    if request.method == 'POST':
+        u = UpdateUserForm(request.POST, instance=request.user)
+        p = UserProfileForm(request.POST, instance=request.user.profile)
+        if u.is_valid() and p.is_valid():
+            u.save()
+            p.save()
+            messages.success(request, 'Your profile has been updated successfully')
+            return redirect('member:profile')
+        else:
+            messages.error(request, 'Correct the error below')
+    else:
+        u = UpdateUserForm(instance=request.user)
+        p = UserProfileForm(instance=request.user.profile)
+    return render(request, 'member/account.html',{
+            'update_form': u,
+            'profile_form': p
+    })
+
+@login_required(login_url='/member/')
+def change_password(request):
+    if request.method == 'POST':
+        f = PasswordChangeForm(request.user, request.POST)
+        if f.is_valid():
+            user = f.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Your password has been changed successfully')
+            return redirect('member:profile')
+        else:
+            messages.error(request, 'Please correct the errors below')
+    else:
+        f = PasswordChangeForm(request.user)
+    return render(request, 'member/change_password.html',{
+        'password_form': f
+    })
+
+@anonymous_required
+def forgot_password(request):
+    if request.method == 'POST':
+        f = ForgotPasswordForm(request.POST)
+        if f.is_valid():
+            print 'Ok'
+            messages.success(request, 'An link has been sent to your email address')
+        else:
+            messages.error(request, 'Your account is not activated')
+    else:
+        f = ForgotPasswordForm()
+
+    return render (request, 'member/forgot_password.html', {
+        'forgot_password_form': f
+    })
 
 def logout(request):
     auth.logout(request)
