@@ -48,7 +48,7 @@
                     <li><a href="#"><i class="fa fa-envelope" style="font-size:20px;color:#d56a14;"></i> contact@theguildweb.com</a></li>
                   {% if request.user.is_authenticated %}
                   <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user" style="font-size:20px;color:#d56a14;"><span class="caret"></span></i> Hi! {{ request.user.username }}</a>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user" style="font-size:20px;color:#d56a14;"><span class="caret"></span></i> Welcome! {{ request.user.username }}</a>
                   <ul class="dropdown-menu" id="auth-dropdown">
                     <li><a href="{%url 'member:profile'%}">Profile</a></li>
                     <li><a href="{%url 'member:account'%}">Account</a></li>
