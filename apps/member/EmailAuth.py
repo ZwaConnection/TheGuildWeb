@@ -20,6 +20,7 @@ class EmailBackend(object):
         except User.DoesNotExist:
             return None
 '''
+
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
