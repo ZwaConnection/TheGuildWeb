@@ -430,28 +430,33 @@ a-color li{
     /*Annoucement board*/
 #board{
     margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-image: url('../img/board.jpg');
     color: white;
     text-align: center;
 }
 #ads{
     overflow: hidden;
     width: 240px;
-    height: 150px;
+    height: 200px;
 }
 #ads a,
 #ads p {
     color: #ffff;
     position: relative;
-    -webkit-animation: mymove 5s infinite;  /* Safari 4.0 - 8.0 */
+    -webkit-animation: mymove 10s infinite;  /* Safari 4.0 - 8.0 */
     -webkit-animation-timing-function: ease-in-out;
-    animation: mymove 5s infinite;
+    animation: mymove 10s infinite;
     animation-timing-function: ease-in-out;
 }
 #board:hover {
     -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
     animation-play-state: paused;
 }
+#ads:hover {
+    -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+    animation-play-state: paused;
+}
+
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes mymove {
     from {top: 0px;}

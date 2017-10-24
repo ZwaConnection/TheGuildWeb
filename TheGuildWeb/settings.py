@@ -136,3 +136,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 #Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#Email Authentication
+AUTHENTICATION_BACKENDS = (
+    'apps.member.EmailAuth.EmailBackend',
+)
